@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/登录页面.css">
+    <script src="../js/登录页面.js"></script>
+</head>
+</head>
+<body>
+    <img src="../images/logo.png" alt="logo" style="width: auto; height:15%; z-index: 12; position: fixed; left: 5%; top: 5%;">
+    <div class="wrapper">
+        <form action="#">
+            <h2>Login form</h2>
+            <div class="input-field">
+                <input type="text" id="email" required>
+                <label>输入您的邮箱</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="psd" required>
+                <label>输入您的密码</label>
+            </div>
+            <div class="forget">
+                <label for="remember">
+                    <input type="checkbox" id="remember">
+                    <p>记住密码</p>
+                </label>
+                <a href="注册.html">忘记密码？</a>
+            </div>
+            <button type="submit" onclick="validateForm()">登录</button>
+            <div class="register">
+                <p>没有账号吗？<a href="注册.html">注册</a></p>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>

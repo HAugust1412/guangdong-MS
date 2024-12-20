@@ -1,0 +1,369 @@
+body {
+  background: rgb(200, 255, 255);
+  font: 13px/1.5 Arial;
+  padding:0;
+  background-image: url(../images/bg2.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+p {
+  text-indent:2em;	
+}
+
+h2 {
+  margin: 0;
+}
+
+.rounded {
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+  padding: 15px;
+  margin-bottom: 5px;
+  background: rgb(255, 248, 215);
+}
+
+.footer p {
+  text-align: right;
+  color: #888;
+  margin-bottom: 0;
+}
+
+#container {
+  margin: 0 auto;
+  width: 85%;
+}
+
+#content {
+  float: left;
+	width: 53%;
+}
+
+#leftside {
+  float: left;
+	width: 20%;
+  margin-right: 1%;
+}
+
+#rightside {
+  float: right;
+	width: 25%;
+  margin-left: 1%;
+}
+
+#pagefooter {
+	clear: both;
+}
+
+.HeadPro{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin: 3px;
+  margin-right: 5px;
+  vertical-align:middle;
+}
+
+#HeadFont{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000000;
+  line-height: 1.2;
+}
+.FontGrey{
+  color: #a3a3a3;
+  font-size: 0.8em;
+}
+
+#Topic {
+  background-color: #e9e9e9; 
+  border: none; 
+  color: rgb(148, 148, 148); 
+  padding: 5px 5px; 
+  width: 100px;
+  text-align: center; 
+  font-size: 15px;
+  margin: 1px 1px;
+  cursor: pointer; 
+  border-radius: 5px; 
+}
+
+/* 鼠标悬停时的样式 */
+#Topic:hover {
+  background-color: #ffffff; 
+}
+
+#TopicContent {
+  background-color: #ffffff; 
+  border: none; 
+  color: rgb(148, 148, 148); 
+  padding: 5px 5px; 
+  width: 98%;
+  height:88px ;
+  font-size: 15px;
+  margin: 1px 1px;
+  cursor: pointer; 
+  border-radius: 5px; 
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: 'Microsoft YaHei' 'Courier New', Courier, monospace;
+}
+
+.FaBiao{
+  height: 30px; 
+  width: 30px;
+  margin: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* 添加过渡效果 */
+}
+
+.FaBiao:hover {
+  transform: scale(1.05); /* 放大图片 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 添加阴影 */
+  opacity: 0.8; /* 改变透明度 */
+}
+
+#TopicFa {
+  background-color: #33b8ff; 
+  border: none; 
+  color: rgb(255, 255, 255); 
+  padding: 5px 5px; 
+  width: 100px;
+  text-align: center; 
+  font-size: 15px;
+  margin: 1px 1px;
+  cursor: pointer; 
+  border-radius: 5px; 
+}
+
+/* 鼠标悬停时的样式 */
+#TopicFa:hover {
+  background-color: #6acbff; 
+}
+
+.DongTai{
+  height: 50px; 
+  width: 50px;
+  margin: 5px;
+  transition: transform 0.5s ease; 
+}
+
+.DongTai:hover {
+  transform: rotate(180deg); 
+}
+
+.HeadNor{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-right: 25px;
+}
+
+.Headiv{
+  display: inline-block;
+}
+
+.Headiv:hover{
+  color: #33b8ff;
+}
+.HeadNor:hover{
+  border: 2px solid #33b8ff;
+}
+
+.timeshare{
+  font-family: 'Microsoft YaHei','Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #a3a3a3;
+}
+
+.video-container {
+  max-width: 640px; /* 视频容器最大宽度 */
+  margin: auto; /* 居中视频 */
+}
+
+video {
+  width: 100%; /* 视频宽度自适应容器宽度 */
+  height: auto; /* 高度保持比例 */
+}
+
+.TV{
+  width: 30px;
+  height: 30px;
+}
+
+/* 新增样式：容器样式 */
+.conta {
+  position: absolute; /* 使容器脱离文档流，可以定位 */
+  top: 0; /* 距离顶部 0 像素 */
+  left: 0; /* 距离左侧 0 像素 */
+  width: 100%; /* 宽度占满整个屏幕 */
+  z-index: 10; /* 设置 z-index 值，确保容器在图片上方 */
+}
+
+
+/* 顶部导航栏样式 */
+.top-navbar {
+  background-color: #b23b2f;
+  color: rgba(255, 252, 219);
+  padding: 10px 20px;
+  text-align: right;
+  z-index: 11;
+  position: fixed; /* 修改定位方式为 fixed */
+  top: 0; /* 仍然保持在页面顶部 */
+  left: 0; /* 仍然保持在页面左侧 */
+  width: 100%; /* 宽度占满整个屏幕 */
+}
+
+.top-navbar a {
+  color: rgba(255, 252, 219);
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+/* 主菜单样式 */
+.main-menu {
+  background-color: rgba(255, 252, 219, 0.9);
+  color: #b23b2f;
+  padding: 10px 0;
+  z-index: 11;
+  position: fixed; /* 修改定位方式为 fixed */
+  top: 38px; /* 设置主菜单距离顶部导航栏的距离 */
+  left: 0; /* 仍然保持在页面左侧 */
+  width: 100%; /* 宽度占满整个屏幕 */
+}
+
+.main-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-menu li {
+  position: relative;
+}
+
+.main-menu li a {
+  display: flex;
+  color: #b23b2f;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.fu{
+  height: 28px;
+  width: 28px;
+}
+
+.main-menu li:hover > ul {
+  display: flex; /*显示二级菜单 flex 竖着 block 横着*/
+}
+
+.main-menu ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 252, 219);
+}
+
+.main-menu ul ul li {
+  float: none;
+  width: 100%;
+}
+
+.main-menu ul ul li a {
+  padding: 10px;
+}
+
+.main-menu ul ul li a:hover {
+  background-color: #b23b2f;
+  color: rgba(255, 252, 219);
+}
+/* 添加 span 标签的样式 */
+.main-menu li span {
+  margin-left: 5px; /*调整箭头与文字的距离 */
+  font-size: 16px; /* 调整箭头的大小 */
+  transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 当鼠标悬停在菜单项上时，旋转箭头 */
+.main-menu li:hover span {
+  transform: rotate(180deg);
+}
+
+#topdiv{
+  width: 100%;
+  height: 150px;
+}
+
+.TUleft{
+  text-align:left; 
+  display:inline-block;
+}
+
+.TUcenter{
+  text-align:center; 
+  display:inline-block;
+}
+
+.TUright{
+  text-align:right; 
+  display:inline-block;
+}
+
+.LeftTopic{
+  margin: 8px;
+  margin-bottom: 15px;
+}
+
+.LeftTopic:hover{
+  color: #33b8ff;
+  background-color: rgb(238, 235, 202);
+}
+
+footer {
+  background-color: #b23b2f; /* 深色背景 */
+  color: rgba(255, 252, 219); /* 白色文字 */
+  padding: 20px 0; /* 添加一些内边距 */
+  clear: both; /* 清除浮动 */
+}
+
+footer .Mycontainer {
+  width: 100%; 
+  margin: 0;
+}
+
+footer .Myrow {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .Mycol {
+  flex: 1;
+  text-align: center; 
+}
+
+footer .Mycol h3 {
+  margin-bottom: 10px;
+}
+
+footer .Mycol a {
+  display: block;
+  margin: 5px 0;
+  color: rgba(255, 252, 219);
+  text-decoration: none;
+}
+
+footer .Mycopyright {
+  margin-top: 20px; 
+  text-align: center;
+}
+

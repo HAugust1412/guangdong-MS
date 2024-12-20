@@ -1,0 +1,713 @@
+/* 全局样式 */
+body {
+    font-family: 宋体, 'Microsoft YaHei', 楷体;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/bg4.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #b23b2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  animation: fadeIn 1.5s ease forwards, fadeOut 1.5s 1.5s ease forwards;
+}
+
+#welcome-screen img {
+  width: 100%; /* 确保图片宽度为100% */
+  height: 100%; /* 确保图片高度为100% */
+  object-fit: cover; /* 确保图片覆盖整个容器而不失真 */
+  animation: scaleIn 0.5s ease forwards; /* 淡入动画 */
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+  animation: scaleIn 1.5s ease forwards;
+  margin: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin:auto;
+  padding: 0;
+}
+
+.text-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 80%;
+  z-index: 20;
+  mix-blend-mode: multiply;
+  animation: scaleIn 1.5s 1.5s ease forwards;
+}
+
+/* 新增样式：容器样式 */
+.container {
+    position: absolute; /* 使容器脱离文档流，可以定位 */
+    top: 0; /* 距离顶部 0 像素 */
+    left: 0; /* 距离左侧 0 像素 */
+    width: 100%; /* 宽度占满整个屏幕 */
+    z-index: 10; /* 设置 z-index 值，确保容器在图片上方 */
+}
+
+
+#BacImages img {
+    width: 100%;
+    height: 100%;
+    animation: fadeIn 1s ease-in-out; /* 添加渐变效果 */
+
+}
+
+
+
+/* 顶部导航栏样式 */
+.top-navbar {
+    background-color: #b23b2f;
+    color: rgba(255, 252, 219);
+    padding: 10px 20px;
+    text-align: right;
+    z-index: 11;
+    position: fixed; /* 修改定位方式为 fixed */
+    top: 0; /* 仍然保持在页面顶部 */
+    left: 0; /* 仍然保持在页面左侧 */
+    width: 97.7%; /* 宽度占满整个屏幕 */
+}
+
+.top-navbar a {
+    color: rgba(255, 252, 219);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+/* 主菜单样式 */
+.main-menu {
+    background-color: rgba(255, 252, 219, 0.9);
+    color: #b23b2f;
+    padding: 10px 0;
+    z-index: 11;
+    position: fixed; /* 修改定位方式为 fixed */
+    top: 38px; /* 设置主菜单距离顶部导航栏的距离 */
+    left: 0; /* 仍然保持在页面左侧 */
+    width: 100%; /* 宽度占满整个屏幕 */
+}
+
+.main-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-menu li {
+    position: relative;
+}
+
+.main-menu li a {
+    display: flex;
+    color: #b23b2f;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.fu{
+    height: 28px;
+    width: 28px;
+}
+
+.main-menu li:hover > ul {
+    display: flex; /*显示二级菜单 flex 竖着 block 横着*/
+}
+
+.main-menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 252, 219);
+}
+
+.main-menu ul ul li {
+    float: none;
+    width: 100%;
+}
+
+.main-menu ul ul li a {
+    padding: 10px;
+}
+
+.main-menu ul ul li a:hover {
+    background-color: #b23b2f;
+    color: rgba(255, 252, 219);
+}
+/* 添加 span 标签的样式 */
+.main-menu li span {
+    margin-left: 5px; /*调整箭头与文字的距离 */
+    font-size: 16px; /* 调整箭头的大小 */
+    transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 当鼠标悬停在菜单项上时，旋转箭头 */
+.main-menu li:hover span {
+    transform: rotate(180deg);
+}
+
+.background-indicator {
+    position: absolute;
+    bottom: 5%;
+    left: 80%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.background-indicator .dot {
+    width: 32px;
+    height: 5px;
+    background-color: rgba(255, 252, 219); /* 使用与背景颜色对比度更高的颜色 */
+    border: 1px solid white; /* 添加边框 */
+    margin: 0 10px;
+    cursor: default;
+    /* ... 其他样式 ... */
+    transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.background-indicator .dot.active {
+    background-color: rgba(178,59,47);
+    border: 1px solid white; /* 添加边框 */
+    transform: scale(1.5); /* 放大指示器点 */
+    /* ... 其他样式 ... */
+    animation: blink 1.5s infinite; /* 添加闪烁动画 */
+}
+
+#butt{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    z-index: 10; /* 设置 z-index 值，确保容器在图片上方 */
+    animation: blink 1.5s infinite, float 2.5s infinite alternate ease-in-out; /* 添加浮动动画 */
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px #b23b2f;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-color: rgba(255, 252, 219, 0.95);
+    z-index: -1;
+    pointer-events: none;
+}
+
+header h1{
+    font-family: 'Microsoft YaHei';
+    font-size: 4.0em;
+    color: #b23b2f;
+    font-weight: bold;
+}
+
+header  #Mlink{
+    font-size: 2.0em;
+    color: #b23b2f;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+.more-link {
+    color: #b23b2f;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+
+
+.main-news {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 0 auto; /* 添加自动外边距以使主新闻区域居中 */
+}
+.main-news::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-color: rgba(255, 252, 219, 0.7);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.main-news-img {
+    width: 55%; /* 增加图片宽度 */
+    max-height: 48%;
+    margin-right: 20px; /* 添加右侧间距 */
+    max-width: 100%;
+}
+.main-news-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.main-news-date {
+    font-size: 1.4em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.main-news-title {
+    font-size: 1.8em;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.main-news-text {
+    text-align: justify;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.button-container button {
+    background-color: transparent; /* 设置背景为透明 */
+    color: transparent; /* 隐藏文字，如果需要的话 */
+    border: none; /* 无边框 */
+    padding: 10px; /* 根据图片大小调整内边距 */
+    cursor: pointer; /* 鼠标样式 */
+    margin-right: 10px; /* 按钮间隔 */
+    width: 50px; /* 设置按钮宽度，与图片宽度一致 */
+    height: 50px; /* 设置按钮高度，与图片高度一致 */
+    background-size: contain; /* 背景图片大小适应按钮 */
+    background-repeat: no-repeat; /* 背景图片不重复 */
+    background-position: center; /* 背景图片居中 */
+    transition: background-color 0.3s ease; /* 背景颜色过渡效果，如果需要的话 */
+}
+
+#prev-btn {
+    background-image: url('../images/b01.png'); /* 设置上一张图标的路径 */
+}
+
+#prev-btn:hover {
+    background-image: url('../images/b03.png'); /* 鼠标悬停时的图标路径 */
+}
+
+#next-btn {
+    background-image: url('../images/b02.png'); /* 设置下一张图标的路径 */
+}
+
+#next-btn:hover {
+    background-image: url('../images/b03.png'); /* 鼠标悬停时的图标路径 */
+}
+.news-list {
+    position: relative;
+    width: 97.6%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.news-list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 252, 219, 0.905);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.news-article {
+    display: flex;
+    align-items: flex-start;
+    width: 32%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    box-shadow: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.news-article:hover {
+    transform: translateY(-5px);
+}
+
+.news-img {
+    width: 200px;
+    height: 15vh;
+    margin-right: 15px;
+}
+
+.news-text {
+    flex: 1;
+}
+
+article img {
+    width: 100%;
+    height: auto;
+}
+
+article h3 {
+    margin: 10px 0;
+    padding: 0 10px;
+    font-size: 1.5em;
+}
+
+.news-link {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.news-link:hover h3 {
+    color: #b23b2f;
+}
+.page-indicator {
+    position: absolute;
+    bottom: 10px; /* 调整到底部 */
+    right: 10px; /* 调整到右边 */
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明的背景 */
+    color: rgba(255, 252, 219); /* 白色文字 */
+    padding: 5px 10px; /* 内边距 */
+    border-radius: 5px; /* 圆角边框 */
+    font-size: 1.2em; /* 字体大小 */
+}
+
+
+
+#title {
+        width: 80%;
+        height: 100%;
+        background-color: rgba(255, 252, 219, 0.905);
+        margin: 0 auto;
+        text-align: center;
+        padding: 10px;
+}
+
+#map {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 100%;
+    background-color: rgba(178,59,47,0.75);
+    overflow: hidden; /* 防止内容溢出 */
+    display: flex; /* 设置为 flex 容器 */
+    justify-content: space-between; /* 平均分布项目 */
+}
+
+#cities {
+    width: 8%;
+    height: auto;
+    text-align: center;
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: column; /* 主轴方向为垂直 */
+    justify-content: center; /* 子元素在主轴上居中 */
+}
+
+#photos {
+    width: 67%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* 自动外边距将帮助居中 */
+
+}
+
+
+
+#words {
+    width: 25%;
+    height: auto; /* 设置高度 */
+    border: 8px solid rgba(255, 252, 219, 0.905); /* 设置边框 */
+    background-color: rgba(178,59,47,0.6);
+    padding: 10px; /* 设置内边距 */
+    box-sizing: border-box; /* 确保边框和内边距包含在宽度内 */
+    margin: 15px;
+}
+
+.cityName {
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: column; /* 主轴方向为垂直 */
+    align-items: center; /* 子元素在主轴上居中 */
+    text-align: center;
+    border-right: 5px rgba(255, 252, 219) solid;
+    background-color: rgba(178,59,47);
+    margin: 10px;
+    height: auto;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+
+.cityName p{
+    color: rgba(255, 252, 219);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cityName:hover {
+    background-color: rgba(255, 252, 219); /* 鼠标悬停时的背景颜色 */
+
+}
+
+.cityName:hover p{
+    color: rgba(178,59,47);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#p0{
+    display: block;
+}
+
+#p1,#p3, #p4, #p5, #p6 {
+    display: none; /* 默认不显示图片 */
+}
+
+#p1,#p3, #p4, #p5, #p6 {
+    height: 100%;
+    width: auto;
+}
+
+#w1,#w3, #w4, #w5, #w6 {
+    display: none; /* 默认不显示 */
+    text-align: center;
+}
+
+.h1City{
+    color:rgba(255, 252, 219);
+}
+
+span div p{
+    color: rgba(255, 252, 219);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#photos img {
+    max-width: 100%; /* 确保图片的最大宽度不超过其父元素的宽度 */
+    height: auto; /* 高度自适应，保持图片的宽高比 */
+}
+
+
+#cover{
+    height: 100%;
+    width: 100%;
+}
+
+/* 设置.list-item元素的过渡效果，用于鼠标移入移出时的动画过渡 */
+.list-item {
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.5s ease, margin-left 0.5s ease;
+    position: relative; /* 设置为相对定位 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+	
+}
+/* 以下是针对各个具体元素设置背景图片及相关样式，确保背景图片能完整显示 */
+.l0 {
+    background-size: 100% 100%;
+    background-image: url("../images/bg.jpg")!important;
+}
+.l1 {
+    background-size: 100% 100%;
+    background-image: url("../images/img202.jpg")!important;
+}
+.l2 {
+    background-size: 100% 100%;
+    background-image: url("../images/img005.jpg")!important;
+}
+.l3 {
+    background-size: 100% 100%;
+    background-image: url("../images/img402.jpg")!important;
+}
+.l4 {
+    background-size: 100% 100%;
+    background-image: url("../images/img302.jpg")!important;
+}
+.l5 {
+    background-size: 100% 100%;
+    background-image: url("../images/img101.jpg")!important;
+}
+/* 新增样式用于实现图片堆叠效果 */
+.list-item:not(:first-child) {
+    margin-left: -4.5%; /* 这里设置为每张图片宽度的20%，即250 * 0.2 = 50px，向左偏移，实现堆叠 */
+    z-index: 1; /* 设置初始的堆叠层级 */
+}
+/* 当鼠标悬停时的样式调整，类似之前的效果但结合新的结构 */
+.list-item:hover {
+    width: 28%; /* 悬停时图片宽度变大，可根据需求调整 */
+    z-index: 2; /* 提高悬停时的层级 */
+    opacity: 1;
+    transform: scale(1);
+}
+/* 其他元素在当前元素悬停时的样式调整 */
+.list-item:not(:hover) {
+    width: 22.3%; /* 非悬停时图片宽度恢复，可根据需求调整 */
+    z-index: 1;
+}
+
+footer {
+  background-color: #b23b2f; /* 深色背景 */
+  color: rgba(255, 252, 219); /* 白色文字 */
+  padding: 20px 0; /* 添加一些内边距 */
+  clear: both; /* 清除浮动 */
+}
+
+footer .Mycontainer {
+  width: 100%; 
+  margin: 0;
+}
+
+footer .Myrow {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .Mycol {
+  flex: 1;
+  text-align: center; 
+}
+
+footer .Mycol h3 {
+  margin-bottom: 10px;
+}
+
+footer .Mycol a {
+  display: block;
+  margin: 5px 0;
+  color: rgba(255, 252, 219);
+  text-decoration: none;
+}
+
+footer .Mycopyright {
+  margin-top: 20px; 
+  text-align: center;
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px); /* 向上移动 10 像素 */
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes skew {
+    from {
+        transform: skew(0deg);
+    }
+    to {
+        transform: skew(10deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes scaleIn {
+  from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+  to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}

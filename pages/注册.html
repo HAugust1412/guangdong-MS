@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/注册页面.css">
+    <script src="../js/注册页面.js"></script>
+</head>
+</head>
+<body onload="createCode()">
+    <img src="../images/logo.png" alt="logo" style="width: auto; height:15%; z-index: 12; position: fixed; left: 5%; top: 5%;">
+    <div class="wrapper">
+        <form action="#">
+            <h2>Register form</h2>
+            <div class="input-field">
+                <input type="text" id="email" required>
+                <label>输入您的邮箱</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="psd" required>
+                <label>输入您的密码</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="repsd" required>
+                <label>再次输入您的密码</label>
+            </div>
+            <div class="coding">
+                <div class="code" id="checkCode" onclick="createCode()"></div>
+                <a href="#" onclick="createCode()">看不清换一张</a>
+            </div>
+            <div class="input-field">
+                <input type="text" id="inputCode" required>
+                <label>输入验证码</label>
+            </div>
+            <button type="submit" onclick="validateForm()"><a href="../pages/登录.html">注册</a></button>
+        </form>
+    </div>
+</body>
+</html>

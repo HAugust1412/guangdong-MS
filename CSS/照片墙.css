@@ -1,0 +1,211 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(90deg,#f8d1b4,#fbdcbc,#fff0c9,#fff2e3);
+}
+.photo-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    width: 90%;
+    box-sizing: border-box;
+}
+.photo-wall img {
+    width: 12%;
+    height: auto;
+    margin: 1%;
+    box-sizing: border-box;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+}
+.photo-wall img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    border-color: #e67e22;
+    z-index: 10;
+}
+.rotate-left {
+    transform: rotate(-5deg);
+}
+.rotate-right {
+    transform: rotate(5deg);
+}
+.shift-up {
+    top: -10px;
+}
+.shift-down {
+    top: 10px;
+}
+.shift-left {
+    left: -10px;
+}
+.shift-right {
+    left: 10px;
+}
+#blink {
+    color: #d35400;
+    font-size: 3em;
+    text-align: center;
+    background-image: linear-gradient(to right, #f1c40f, #e67e22);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: blink 5s infinite;
+}
+
+
+.conta {
+    position: absolute; /* 使容器脱离文档流，可以定位 */
+    top: 0; /* 距离顶部 0 像素 */
+    left: 0; /* 距离左侧 0 像素 */
+    width: 100%; /* 宽度占满整个屏幕 */
+    z-index: 10; /* 设置 z-index 值，确保容器在图片上方 */
+}
+
+
+/* 顶部导航栏样式 */
+.top-navbar {
+    background-color: #b23b2f;
+    color: rgba(255, 252, 219);
+    padding: 10px 20px;
+    text-align: right;
+    z-index: 11;
+    position: fixed; /* 修改定位方式为 fixed */
+    top: 0; /* 仍然保持在页面顶部 */
+    left: 0; /* 仍然保持在页面左侧 */
+    width: 100%; /* 宽度占满整个屏幕 */
+}
+
+.top-navbar a {
+    color: rgba(255, 252, 219);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+/* 主菜单样式 */
+.main-menu {
+    background-color: rgba(255, 252, 219, 0.9);
+    color: #b23b2f;
+    padding: 10px 0;
+    z-index: 11;
+    position: fixed; /* 修改定位方式为 fixed */
+    top: 38px; /* 设置主菜单距离顶部导航栏的距离 */
+    left: 0; /* 仍然保持在页面左侧 */
+    width: 100%; /* 宽度占满整个屏幕 */
+}
+
+.main-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-menu li {
+    position: relative;
+}
+
+.main-menu li a {
+    display: flex;
+    color: #b23b2f;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.fu{
+    height: 28px;
+    width: 28px;
+}
+
+.main-menu li:hover > ul {
+    display: flex; /*显示二级菜单 flex 竖着 block 横着*/
+}
+
+.main-menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 252, 219);
+}
+
+.main-menu ul ul li {
+    float: none;
+    width: 100%;
+}
+
+.main-menu ul ul li a {
+    padding: 10px;
+}
+
+.main-menu ul ul li a:hover {
+    background-color: #b23b2f;
+    color: rgba(255, 252, 219);
+}
+/* 添加 span 标签的样式 */
+.main-menu li span {
+    margin-left: 5px; /*调整箭头与文字的距离 */
+    font-size: 16px; /* 调整箭头的大小 */
+    transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 当鼠标悬停在菜单项上时，旋转箭头 */
+.main-menu li:hover span {
+    transform: rotate(180deg);
+}
+
+
+footer {
+  background-color: #b23b2f; /* 深色背景 */
+  color: rgba(255, 252, 219); /* 白色文字 */
+  padding: 20px 0; /* 添加一些内边距 */
+  clear: both; /* 清除浮动 */
+}
+
+footer .Mycontainer {
+  width: 100%; 
+  margin: 0;
+}
+
+footer .Myrow {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .Mycol {
+  flex: 1;
+  text-align: center; 
+}
+
+footer .Mycol h3 {
+  margin-bottom: 10px;
+}
+
+footer .Mycol a {
+  display: block;
+  margin: 5px 0;
+  color: rgba(255, 252, 219);
+  text-decoration: none;
+}
+
+footer .Mycopyright {
+  margin-top: 20px; 
+  text-align: center;
+}
+#topdiv{
+  position: relative;
+
+  width: 100%;
+  height: 150px;
+}
